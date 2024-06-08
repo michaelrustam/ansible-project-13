@@ -1,0 +1,7 @@
+---
+# site.yml
+- name: Install HAProxy on 1st VM
+  hosts: first_vm
+  become: yes
+  roles:
+    - haproxy
