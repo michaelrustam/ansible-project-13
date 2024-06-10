@@ -1,0 +1,6 @@
+# inventory
+[first_vm]
+first_vm_ip ansible_user=your_ssh_user
+
+[second_vm]
+second_vm_ip ansible_user=your_ssh_user

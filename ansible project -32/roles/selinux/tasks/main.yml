@@ -1,0 +1,10 @@
+---
+# tasks/main.yml
+- name: Disable SELinux
+  command: setenforce 0
+
+- name: Ensure SELinux is disabled permanently
+  lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX='
+    line: 'SELINUX=disabled'

@@ -1,0 +1,14 @@
+---
+- name: Install HAProxy on 1st VM
+  hosts: first_vm
+  become: yes
+  roles:
+    - haproxy
+
+- name: Configure 2nd VM
+  hosts: second_vm
+  become: yes
+  roles:
+    - virtual_hosts
+    - firewall
+    - selinux

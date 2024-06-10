@@ -1,0 +1,13 @@
+---
+# tasks/main.yml
+- name: Install HAProxy
+  apt:
+    name: haproxy
+    state: present
+    update_cache: yes
+
+- name: Ensure HAProxy is started and enabled at boot
+  systemd:
+    name: haproxy
+    state: started
+    enabled: yes

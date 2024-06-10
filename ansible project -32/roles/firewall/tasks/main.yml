@@ -1,0 +1,27 @@
+---
+# tasks/main.yml
+- name: Ensure UFW is installed
+  apt:
+    name: ufw
+    state: present
+    update_cache: yes
+
+- name: Allow port 5000
+  ufw:
+    rule: allow
+    port: '5000'
+
+- name: Allow port 6000
+  ufw:
+    rule: allow
+    port: '6000'
+
+- name: Allow port 7000
+  ufw:
+    rule: allow
+    port: '7000'
+
+- name: Enable UFW
+  ufw:
+    state: enabled
+    policy: allow

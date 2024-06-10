@@ -1,0 +1,25 @@
+---
+# tasks/main.yml
+- name: Create virtual host listening on port 5000
+  command: "python3 -m http.server 5000"
+  args:
+    creates: /tmp/server5000
+  async: 3600
+  poll: 0
+  register: server5000
+
+- name: Create virtual host listening on port 6000
+  command: "python3 -m http.server 6000"
+  args:
+    creates: /tmp/server6000
+  async: 3600
+  poll: 0
+  register: server6000
+
+- name: Create virtual host listening on port 7000
+  command: "python3 -m http.server 7000"
+  args:
+    creates: /tmp/server7000
+  async: 3600
+  poll: 0
+  register: server7000
